@@ -1,0 +1,19 @@
+{
+  "About": "Biz haqimizda",
+  "Support": "Qo'llab-quvvatlash",
+  "Other": "Boshqa",
+  "Theme": "Mavzu",
+  "An": "Bir",
+  "Booster": "Bo'sh o'tkazuvchi",
+  "to_Your_NextJS_Apps": "sizning NextJS ilovalaringizga",
+  "An_approachable_performant_and_versatile_boilerplate_for_building_SSR_applications": "SSR ilovalarini qurish uchun qulay, samarali va ko'p tomonlama asosiy qism.",
+  "Use_Template": "Shablonni ishlatish",
+  "Learn_More": "Ko'proq ma'lumot olish!",
+  "Approachable": "Qulay",
+  "Add_components_without_sending_additional_client_side_JavaScript_Built_on_the_latest_React_features": "Eng so'nggi React xususiyatlariga asoslangan qo'shimchalarni qo'shing, qo'shimcha mijoz tomonidagi JavaScriptni qo'shmasdan yuborish.",
+  "Automatic_Image_Font_and_Script_Optimizations_for_improved_UX_and_Core_Web_Vitals": "Yaxshilangan UX va asosiy veb-vital uchun avtomatik tasvir, shrift va skript optimallashtirishlar.",
+  "Versatile": "Ko'p tomonlama",
+  "A_rich_incredibly_adoptable_template_that_scales_between_a_small_showcase_website_and_a_full_size_app": "Kichik ko'rsatma sayti va to'liq o'lchamli ilova orasida",
+  "This_is_a_simple_about_page_just_to_show_how_you_can_use_the_internationalization_in_different_pages": "Bu faqat sizga xalqaro tarjima qilishni qanday qilib turli sahifalarda ishlatishingizni ko'rsatish uchun oddiy sahifa",
+  "Performant": "Samarali"
+}
