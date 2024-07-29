@@ -1,0 +1,13 @@
+.beautyTabItem {
+  @apply relative w-full rounded-2xl border border-gray-200 bg-white py-5 text-center font-serif text-xl font-semibold;
+}
+
+.selected {
+  @apply border-mainGreen text-mainGreen;
+
+  &::before {
+    content: '';
+
+    @apply border-b-mainGreen border-l-mainGreen absolute -bottom-4 left-1/2 size-8 -translate-x-1/2 -rotate-45 transform rounded-es-lg border border-r-white border-t-white bg-white;
+  }
+}

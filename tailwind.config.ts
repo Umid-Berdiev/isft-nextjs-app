@@ -1,7 +1,7 @@
 import type { Config } from 'tailwindcss'
 
 const config = {
-  darkMode: ['class'],
+  darkMode: 'class',
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
@@ -37,11 +37,13 @@ const config = {
         dropdownHover: 'var(--dropdown-hover)',
         buttonSecondary: 'var(--button-secondary)',
         mainRed: 'var(--main-red)',
-        mainRedLight: 'var(--main-red-light)'
+        mainRedLight: 'var(--main-red-light)',
+        mainGreen: 'var(--main-green)'
       },
 
       fontFamily: {
-        sans: ['var(--font-space-grotesk)', 'var(--rubik)']
+        sans: ['var(--manrope)'],
+        serif: ['var(--magnet-trial)']
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -49,7 +51,10 @@ const config = {
       }
     }
   },
-  plugins: [require('tailwindcss-animate'), require('daisyui')]
+  plugins: [require('tailwindcss-animate'), require('daisyui')],
+  daisyui: {
+    themes: ['light']
+  }
 } satisfies Config
 
 export default config

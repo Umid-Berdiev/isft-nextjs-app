@@ -35,7 +35,7 @@ const LangSwitcher: React.FC = () => {
       </div>
       <ul
         tabIndex={0}
-        className='dropdown-content menu bg-base-100 rounded-box z-[1] p-2 shadow'
+        className='menu dropdown-content z-[1] rounded-box bg-base-100 p-2 shadow'
       >
         {options.map(lang => {
           return (

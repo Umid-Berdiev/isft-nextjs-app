@@ -5,20 +5,53 @@ import {
   NextIntlClientProvider,
   useMessages
 } from 'next-intl'
-import { Roboto_Flex } from 'next/font/google'
+import { Roboto_Flex, Manrope } from 'next/font/google'
 import NextTopLoader from 'nextjs-toploader'
 import { Header } from './components/Header'
 import './globals.css'
+import localFont from 'next/font/local'
 
-const roboto = Roboto_Flex({
+// const roboto = Roboto_Flex({
+//   subsets: ['latin', 'cyrillic'],
+//   variable: '--roboto',
+//   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
+// })
+
+const magnetTrial = localFont({
+  src: [
+    {
+      path: '../fonts/MagnetTrial/MagnetTrial-Regular.ttf',
+      weight: '400',
+      style: 'normal'
+    },
+    {
+      path: '../fonts/MagnetTrial/MagnetTrial-Medium.ttf',
+      weight: '500',
+      style: 'normal'
+    },
+    {
+      path: '../fonts/MagnetTrial/MagnetTrial-SemiBold.ttf',
+      weight: '600',
+      style: 'normal'
+    },
+    {
+      path: '../fonts/MagnetTrial/MagnetTrial-Bold.ttf',
+      weight: '700',
+      style: 'normal'
+    }
+  ],
+  variable: '--magnet-trial'
+})
+
+const manrope = Manrope({
   subsets: ['latin', 'cyrillic'],
-  variable: '--roboto',
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
+  variable: '--manrope',
+  weight: ['200', '300', '400', '500', '600', '700', '800']
 })
 
 export const metadata: Metadata = {
-  title: 'Next Temp',
-  description: 'create next app By Yahya Parvar!'
+  title: 'ISFT',
+  description: 'ISFT - Институт Современных Финансовых Технологий'
 }
 
 export default function RootLayout({
@@ -31,7 +64,7 @@ export default function RootLayout({
   const messages = useMessages()
   return (
     <html
-      className={`${roboto.className} scroll-smooth`}
+      className={`${manrope.variable} ${magnetTrial.variable} scroll-smooth`}
       lang={locale}
       dir={'ltr'}
       suppressHydrationWarning
