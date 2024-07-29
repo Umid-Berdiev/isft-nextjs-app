@@ -7,7 +7,7 @@
     --primary: #0d0d0d;
     --secondary: #097fa5;
     --background: #ffffff;
-    --background-secondary: #F4F5F7;
+    --background-secondary: #f4f5f7;
     --button: #097fa5;
     --button-text: #fff;
     --text-secondary: #3c3c3c;
@@ -20,7 +20,8 @@
     --span-bg: linear-gradient(to right, #4e4e9e, #097fa5, #3e87ed);
     --main-red: #870037;
     --main-red-light: #87003712;
-    --main-green: #00575B;
+    --main-green: #00575b;
+    --main-green-gradient: linear-gradient(90deg, #00575b 100%, #00969d 100%);
   }
   .dark {
     --primary: #d6deff;

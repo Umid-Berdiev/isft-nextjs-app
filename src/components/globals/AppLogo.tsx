@@ -1,12 +1,8 @@
-import { Link } from '@/src/navigation'
+import Link from 'next/link'
 
-export default function AppLogo({ locale }: { locale: string }) {
+export default function AppLogo({ className }: { className: string }) {
   return (
-    <Link lang={locale} href='/' className='font-serif text-5xl font-bold'>
-      {/* <div className='mb-2 h-14 w-14'>
-            <LogoIcon />
-          </div>
-          <strong className='mx-2 select-none'>Template</strong> */}
+    <Link href='/' className={`font-serif text-5xl font-bold ${className}`}>
       <span className='select-none'>ISFT</span>
     </Link>
   )

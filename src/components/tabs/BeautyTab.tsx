@@ -6,6 +6,7 @@ import Heading5 from '../typography/Heading5'
 
 export default function BeautyTab({ data = [] }: any) {
   const [selectedTab, setSelectedTab] = useState(0)
+  const [selectedBlock, setSelectedBlock] = useState(null)
 
   const selectTabHandler = (index: number) => {
     console.log({ index })
@@ -29,19 +30,25 @@ export default function BeautyTab({ data = [] }: any) {
           </div>
         ))}
       </div>
-      <RoundedBlock className='mt-6 flex-grow bg-background-secondary'>
+      <RoundedBlock className='mt-6 flex-grow !bg-background-secondary'>
         <div className='grid gap-4 lg:grid-cols-3'>
-          {data[selectedTab].content.map((item: any, index: number) => (
-            <RoundedBlock key={index} className=''>
-              <Heading5 className='text-mainGreen flex gap-2'>
+          {data[selectedTab].content?.map((item: any, index: number) => (
+            <RoundedBlock
+              key={index}
+              className={`${selectedBlock === item.title ? '!bg-gradient-to-r from-[#00575B] to-[#00969D] text-white' : 'bg-white'}`}
+              onClick={() => setSelectedBlock(item.title)}
+            >
+              <Heading5
+                className={`flex items-center gap-1 ${selectedBlock === item.title ? 'text-white' : 'text-mainGreen'}`}
+              >
                 {item.icon}
-                {item.title}
+                <span>{item.title}</span>
               </Heading5>
               <div className='mt-14 line-clamp-2 inline-flex flex-wrap gap-2'>
                 {item.content.map((i: string) => (
                   <span
                     key={i}
-                    className='rounded-2xl border px-3 py-1.5 text-sm'
+                    className='rounded-2xl border px-3 py-1.5 text-xs'
                   >
                     {i}
                   </span>

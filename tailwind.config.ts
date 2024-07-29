@@ -38,7 +38,8 @@ const config = {
         buttonSecondary: 'var(--button-secondary)',
         mainRed: 'var(--main-red)',
         mainRedLight: 'var(--main-red-light)',
-        mainGreen: 'var(--main-green)'
+        mainGreen: 'var(--main-green)',
+        mainGreenGradient: 'var(--main-green-gradient)'
       },
 
       fontFamily: {

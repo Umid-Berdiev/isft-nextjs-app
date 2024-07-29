@@ -22,7 +22,7 @@ export const Header: FC<Props> = ({ locale }) => {
   return (
     <header className='bg-[url(/images/Hero.svg)] bg-cover bg-no-repeat pb-20'>
       <div className='container flex flex-row items-center justify-between py-5 text-white'>
-        <AppLogo locale={locale} />
+        <AppLogo />
         <div className='flex flex-row items-center gap-6'>
           <AppMainMenu locale={locale} />
           {/* <ThemeSwitch /> */}

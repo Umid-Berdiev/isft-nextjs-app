@@ -10,6 +10,7 @@ import NextTopLoader from 'nextjs-toploader'
 import { Header } from './components/Header'
 import './globals.css'
 import localFont from 'next/font/local'
+import TheFooter from './components/TheFooter'
 
 // const roboto = Roboto_Flex({
 //   subsets: ['latin', 'cyrillic'],
@@ -102,6 +103,7 @@ export default function RootLayout({
             />
             <Header locale={locale} />
             <main className='mx-auto max-w-screen-2xl'>{children}</main>
+            <TheFooter />
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>
