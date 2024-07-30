@@ -3,10 +3,150 @@ import { useState } from 'react'
 import BeautyTabItem from './BeautyTabItem'
 import RoundedBlock from '../blocks/RoundedBlock'
 import Heading5 from '../typography/Heading5'
+import { useTranslations } from 'next-intl'
+import GlobeIcon from '@/src/app/icons/GlobeIcon'
+import { FiBook } from 'react-icons/fi'
+import { GiMoneyStack } from 'react-icons/gi'
+import { PiCodeBold, PiLaptop } from 'react-icons/pi'
+import { FaBookOpenReader } from 'react-icons/fa6'
+import { FiInfo } from 'react-icons/fi'
+import { FiGlobe } from 'react-icons/fi'
 
-export default function BeautyTab({ data = [] }: any) {
+export default function BeautyTab() {
   const [selectedTab, setSelectedTab] = useState(0)
   const [selectedBlock, setSelectedBlock] = useState(null)
+  const t = useTranslations('')
+  const data = [
+    {
+      title: t('Bakalavriat'),
+      content: [
+        {
+          title: t('Xalqaro dasturlar'),
+          content: [
+            'Moliya sohasida boshqaruv',
+            'Xalqaro munosabatlar',
+            'Buxgalteriya hisobi va moliya',
+            'Moliya tahlil va audit'
+          ],
+          icon: (className: string) => <GlobeIcon className={className} />
+        },
+        {
+          title: t('Gumanitar dasturlar'),
+          content: [
+            'Xorijiy til va adabiyoti',
+            'Pedagogika',
+            'Psixologiya',
+            "Boshlang'ich ta'lim",
+            "Maktabgacha ta'lim"
+          ],
+          icon: <FiBook />
+        },
+        {
+          title: t('Moliyaviy-iqdisodiy dasturlar'),
+          content: [
+            'Xorijiy til va adabiyoti',
+            'Pedagogika',
+            'Psixologiya',
+            "Boshlang'ich ta'lim",
+            "Maktabgacha ta'lim"
+          ],
+          icon: <GiMoneyStack />
+        },
+        {
+          title: t('Axborot texnologiyalari'),
+          content: [
+            'Xorijiy til va adabiyoti',
+            'Pedagogika',
+            'Psixologiya',
+            "Boshlang'ich ta'lim",
+            "Maktabgacha ta'lim"
+          ],
+          icon: <PiCodeBold />
+        },
+        {
+          title: t('Sirtqi'),
+          content: [
+            'Xorijiy til va adabiyoti',
+            'Pedagogika',
+            'Psixologiya',
+            "Boshlang'ich ta'lim",
+            "Maktabgacha ta'lim"
+          ],
+          icon: <FaBookOpenReader />
+        },
+        {
+          title: (
+            <span className='flex items-center'>
+              {t('Masofaviy*')}
+              <FiInfo className='ml-2 text-gray-500' />
+            </span>
+          ),
+          content: [
+            'Xorijiy til va adabiyoti',
+            'Pedagogika',
+            'Psixologiya',
+            "Boshlang'ich ta'lim",
+            "Maktabgacha ta'lim"
+          ],
+          icon: <PiLaptop />
+        }
+      ]
+    },
+    {
+      title: t('Magistratura'),
+      content: [
+        {
+          title: t('Xalqaro dasturlar'),
+          content: [
+            'Moliya sohasida boshqaruv',
+            'Xalqaro munosabatlar',
+            'Buxgalteriya hisobi va moliya',
+            'Moliya tahlil va audit',
+            'Moliya va bank ishlari'
+          ],
+          icon: <FiGlobe />
+        },
+        {
+          title: t('Gumanitar dasturlar'),
+          content: [
+            'Xorijiy til va adabiyoti',
+            'Pedagogika',
+            'Psixologiya',
+            "Boshlang'ich ta'lim",
+            "Maktabgacha ta'lim"
+          ],
+          icon: <FiBook />
+        }
+      ]
+    },
+    {
+      title: t("Ikkinchi oliy ta'lim"),
+      content: [
+        {
+          title: t('Xalqaro dasturlar'),
+          content: [
+            'Moliya sohasida boshqaruv',
+            'Xalqaro munosabatlar',
+            'Buxgalteriya hisobi va moliya',
+            'Moliya tahlil va audit',
+            'Moliya va bank ishlari'
+          ],
+          icon: <FiGlobe />
+        },
+        {
+          title: t('Gumanitar dasturlar'),
+          content: [
+            'Xorijiy til va adabiyoti',
+            'Pedagogika',
+            'Psixologiya',
+            "Boshlang'ich ta'lim",
+            "Maktabgacha ta'lim"
+          ],
+          icon: <FiBook />
+        }
+      ]
+    }
+  ]
 
   const selectTabHandler = (index: number) => {
     console.log({ index })
@@ -41,7 +181,9 @@ export default function BeautyTab({ data = [] }: any) {
               <Heading5
                 className={`flex items-center gap-1 ${selectedBlock === item.title ? 'text-white' : 'text-mainGreen'}`}
               >
-                {item.icon}
+                {typeof item.icon === 'function'
+                  ? item.icon(selectedBlock === item.title ? 'text-white' : '')
+                  : item.icon}
                 <span>{item.title}</span>
               </Heading5>
               <div className='mt-14 line-clamp-2 inline-flex flex-wrap gap-2'>

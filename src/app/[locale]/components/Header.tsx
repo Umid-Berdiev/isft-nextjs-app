@@ -37,12 +37,12 @@ export const Header: FC<Props> = ({ locale }) => {
         {/* left block */}
         <div className='left flex-grow'>
           <Heading1>
-            <span className='text-[#F9C94D]'>300 ta</span> budjet o‘rni
+            <span className='text-[#F9C94D]'>300 ta</span> budjet o'rni
             2024-2025 yilning qabuli uchun!
           </Heading1>
           <p className='mt-4'>
             {t(
-              'Bizning institutimizda BЕPUL o‘qish imkoniyatini qo‘lga kiriting!'
+              "Bizning institutimizda BЕPUL o'qish imkoniyatini qo'lga kiriting!"
             )}
           </p>
           <div className='mt-6 grid w-full grid-cols-3 gap-6'>
@@ -66,11 +66,11 @@ export const Header: FC<Props> = ({ locale }) => {
               <div className='mt-7 flex items-end gap-4'>
                 <div>
                   <Heading5>
-                    {t('Hoziroq ISFT instituti talabasi bo’ling')}
+                    {t("Hoziroq ISFT instituti talabasi bo'ling")}
                   </Heading5>
                   <p className='mt-2'>
                     {t(
-                      'Va bizning institutimizda BЕPUL o‘qish imkoniyatini qo‘lga kiriting!'
+                      "Va bizning institutimizda BЕPUL o'qish imkoniyatini qo'lga kiriting!"
                     )}
                   </p>
                 </div>
@@ -85,7 +85,7 @@ export const Header: FC<Props> = ({ locale }) => {
               <div className='mt-7'>
                 <Heading5>{t('Talabalar')}</Heading5>
                 <p className='mt-2'>
-                  {t('20 mingdan ko’p inson aynan bizni talnadi!')}
+                  {t("20 mingdan ko'p inson aynan bizni talnadi!")}
                 </p>
               </div>
             </RoundedBlock>
@@ -97,10 +97,10 @@ export const Header: FC<Props> = ({ locale }) => {
           <RoundedBlock>
             <div className='flex gap-2'>
               <div className='mb-3 flex-grow'>
-                <Heading5>{t('Hoziroq biz bilan bog’laning')}</Heading5>
+                <Heading5>{t("Hoziroq biz bilan bog'laning")}</Heading5>
                 <p className='mt-2'>
                   {t(
-                    'O’zingiz istagan savollarga 5 daqiqa ichida javob oling va o’z o’rningizni band qiling.'
+                    "O'zingiz istagan savollarga 5 daqiqa ichida javob oling va o'z o'rningizni band qiling."
                   )}
                 </p>
               </div>
@@ -115,7 +115,7 @@ export const Header: FC<Props> = ({ locale }) => {
             <Heading5>{t('ISFTning missiyasi va falsafasi')}</Heading5>
             <p className='mt-2'>
               {t(
-                'Bizning missiyamiz - talabalarga karyera uchun zarur ko‘nikmalarni berish, ularni turli xil professional muhitlarda muvaffaqiyat qozonishga tayyorlashdir.'
+                "Bizning missiyamiz - talabalarga karyera uchun zarur ko'nikmalarni berish, ularni turli xil professional muhitlarda muvaffaqiyat qozonishga tayyorlashdir."
               )}
             </p>
           </div>

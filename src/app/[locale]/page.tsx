@@ -1,153 +1,16 @@
 import { useTranslations } from 'next-intl'
 import Heading2 from '@/src/components/typography/Heading2'
 import BeautyTab from '@/src/components/tabs/BeautyTab'
-import { GiLaptop, GiMoneyStack, GiOpenBook } from 'react-icons/gi'
-import { FiBook, FiGlobe, FiInfo } from 'react-icons/fi'
-import { PiCodeBold, PiLaptop } from 'react-icons/pi'
-import { FaBookOpenReader } from 'react-icons/fa6'
 import RoundedBlock from '@/src/components/blocks/RoundedBlock'
 import Image from 'next/image'
 import Heading3 from '@/src/components/typography/Heading3'
 import RewardsIcon from '../icons/RewardsIcon'
-import Heading4 from '@/src/components/typography/Heading4'
 import DoubleDegreeIcon from '../icons/DoubleDegreeIcon'
 import SuitcaseIcon from '../icons/SuitcaseIcon'
 import BanknoteHandshakeIcon from '../icons/BanknoteHandshakeIcon'
 
 export default function DashboardPage() {
   const t = useTranslations('')
-
-  const data = [
-    {
-      title: t('Bakalavriat'),
-      content: [
-        {
-          title: t('Xalqaro dasturlar'),
-          content: [
-            'Moliya sohasida boshqaruv',
-            'Xalqaro munosabatlar',
-            'Buxgalteriya hisobi va moliya',
-            'Moliya tahlil va audit'
-          ],
-          icon: <FiGlobe />
-        },
-        {
-          title: t('Gumanitar dasturlar'),
-          content: [
-            'Xorijiy til va adabiyoti',
-            'Pedagogika',
-            'Psixologiya',
-            "Boshlang'ich ta'lim",
-            "Maktabgacha ta'lim"
-          ],
-          icon: <FiBook />
-        },
-        {
-          title: t('Moliyaviy-iqdisodiy dasturlar'),
-          content: [
-            'Xorijiy til va adabiyoti',
-            'Pedagogika',
-            'Psixologiya',
-            "Boshlang'ich ta'lim",
-            "Maktabgacha ta'lim"
-          ],
-          icon: <GiMoneyStack />
-        },
-        {
-          title: t('Axborot texnologiyalari'),
-          content: [
-            'Xorijiy til va adabiyoti',
-            'Pedagogika',
-            'Psixologiya',
-            "Boshlang'ich ta'lim",
-            "Maktabgacha ta'lim"
-          ],
-          icon: <PiCodeBold />
-        },
-        {
-          title: t('Sirtqi'),
-          content: [
-            'Xorijiy til va adabiyoti',
-            'Pedagogika',
-            'Psixologiya',
-            "Boshlang'ich ta'lim",
-            "Maktabgacha ta'lim"
-          ],
-          icon: <FaBookOpenReader />
-        },
-        {
-          title: (
-            <span className='flex items-center'>
-              {t('Masofaviy*')}
-              <FiInfo className='ml-2 text-gray-500' />
-            </span>
-          ),
-          content: [
-            'Xorijiy til va adabiyoti',
-            'Pedagogika',
-            'Psixologiya',
-            "Boshlang'ich ta'lim",
-            "Maktabgacha ta'lim"
-          ],
-          icon: <PiLaptop />
-        }
-      ]
-    },
-    {
-      title: t('Magistratura'),
-      content: [
-        {
-          title: t('Xalqaro dasturlar'),
-          content: [
-            'Moliya sohasida boshqaruv',
-            'Xalqaro munosabatlar',
-            'Buxgalteriya hisobi va moliya',
-            'Moliya tahlil va audit',
-            'Moliya va bank ishlari'
-          ],
-          icon: <FiGlobe />
-        },
-        {
-          title: t('Gumanitar dasturlar'),
-          content: [
-            'Xorijiy til va adabiyoti',
-            'Pedagogika',
-            'Psixologiya',
-            "Boshlang'ich ta'lim",
-            "Maktabgacha ta'lim"
-          ],
-          icon: <FiBook />
-        }
-      ]
-    },
-    {
-      title: t("Ikkinchi oliy ta'lim"),
-      content: [
-        {
-          title: t('Xalqaro dasturlar'),
-          content: [
-            'Moliya sohasida boshqaruv',
-            'Xalqaro munosabatlar',
-            'Buxgalteriya hisobi va moliya',
-            'Moliya tahlil va audit',
-            'Moliya va bank ishlari'
-          ],
-          icon: <FiGlobe />
-        },
-        {
-          title: t('Gumanitar dasturlar'),
-          content: [
-            'Xorijiy til va adabiyoti',
-            'Pedagogika',
-            'Psixologiya',
-            "Boshlang'ich ta'lim",
-            "Maktabgacha ta'lim"
-          ],
-          icon: <FiBook />
-        }
-      ]
-    }
-  ]
 
   return (
     <div className='container pb-10'>
@@ -159,7 +22,7 @@ export default function DashboardPage() {
           )}
         </p>
       </section>
-      <BeautyTab data={data} />
+      <BeautyTab />
       <section className='mt-20 text-center'>
         <Heading2>{t('Imkoniyatlar va Afzalliklar')}</Heading2>
         <div className='mt-8 flex w-full gap-4'>

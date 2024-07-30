@@ -1,7 +1,7 @@
 export default function GlobeIcon({
   className = '#00575B'
 }: {
-  className: string
+  className?: string
 }) {
   return (
     <svg
