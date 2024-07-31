@@ -4,7 +4,6 @@ import Link from 'next/link'
 import {
   BiLogoFacebook,
   BiLogoInstagram,
-  BiLogoLinkedin,
   BiLogoLinkedinSquare,
   BiLogoTwitter
 } from 'react-icons/bi'
@@ -27,16 +26,24 @@ export default function TheFooter() {
               <p className='font-serif font-bold'>{t('Tezkor havolalar')}</p>
               <ul className='mt-2 flex flex-col'>
                 <li className='py-2'>
-                  <a className='text-sm'>{t('Biz haqimizda')}</a>
+                  <Link href={'/'} className='text-sm'>
+                    {t('Biz haqimizda')}
+                  </Link>
                 </li>
                 <li className='py-2'>
-                  <a className='text-sm'>{t('Karyera')}</a>
+                  <Link href={'/'} className='text-sm'>
+                    {t('Karyera')}
+                  </Link>
                 </li>
                 <li className='py-2'>
-                  <a className='text-sm'>{t('Yangiliklar')}</a>
+                  <Link href={'/'} className='text-sm'>
+                    {t('Yangiliklar')}
+                  </Link>
                 </li>
                 <li className='py-2'>
-                  <a className='text-sm'>{t('FAQ')}</a>
+                  <Link href={'/'} className='text-sm'>
+                    {t('FAQ')}
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -44,10 +51,14 @@ export default function TheFooter() {
               <p className='font-serif font-bold'>{t('Foydali havolalar')}</p>
               <ul className='mt-2 flex flex-col'>
                 <li className='py-2'>
-                  <a className='text-sm'>{t('Online kitoblar')}</a>
+                  <Link href={'/'} className='text-sm'>
+                    {t('Online kitoblar')}
+                  </Link>
                 </li>
                 <li className='py-2'>
-                  <a className='text-sm'>{t('Konferensiyalar')}</a>
+                  <Link href={'/'} className='text-sm'>
+                    {t('Konferensiyalar')}
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -55,16 +66,24 @@ export default function TheFooter() {
               <p className='font-serif font-bold'>{t("Ta'lim dasturlari")}</p>
               <ul className='mt-2 flex flex-col'>
                 <li className='py-2'>
-                  <a className='text-sm'>{t('Bakalavriat')}</a>
+                  <Link href={'/'} className='text-sm'>
+                    {t('Bakalavriat')}
+                  </Link>
                 </li>
                 <li className='py-2'>
-                  <a className='text-sm'>{t('Magistratura')}</a>
+                  <Link href={'/'} className='text-sm'>
+                    {t('Magistratura')}
+                  </Link>
                 </li>
                 <li className='py-2'>
-                  <a className='text-sm'>{t("Ikkinchi oliy ta'lim")}</a>
+                  <Link href={'/'} className='text-sm'>
+                    {t("Ikkinchi oliy ta'lim")}
+                  </Link>
                 </li>
                 <li className='py-2'>
-                  <a className='text-sm'>{t('Xorijiy fuqarolar qabuli')}</a>
+                  <Link href={'/'} className='text-sm'>
+                    {t('Xorijiy fuqarolar qabuli')}
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -72,28 +91,28 @@ export default function TheFooter() {
               <p className='font-serif font-bold'>{t('Sotsial medialar')}</p>
               <ul className='mt-2 flex flex-col'>
                 <li className='py-2'>
-                  <a className='text-sm'>
+                  <Link href={'/'} className='text-sm'>
                     <BiLogoFacebook className='inline-block text-2xl' />
                     <span className='ml-3'>Facebook</span>
-                  </a>
+                  </Link>
                 </li>
                 <li className='py-2'>
-                  <a className='text-sm'>
+                  <Link href={'/'} className='text-sm'>
                     <BiLogoInstagram className='inline-block text-2xl' />
                     <span className='ml-3'>Instagram</span>
-                  </a>
+                  </Link>
                 </li>
                 <li className='py-2'>
-                  <a className='text-sm'>
+                  <Link href={'/'} className='text-sm'>
                     <BiLogoTwitter className='inline-block text-2xl' />
                     <span className='ml-3'>Twitter</span>
-                  </a>
+                  </Link>
                 </li>
                 <li className='py-2'>
-                  <a className='text-sm'>
+                  <Link href={'/'} className='text-sm'>
                     <BiLogoLinkedinSquare className='inline-block text-2xl' />
                     <span className='ml-3'>LinkedIn</span>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

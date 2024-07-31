@@ -57,7 +57,7 @@ export const Header: FC<Props> = ({ locale }) => {
             </RoundedBlock>
             <RoundedBlock
               className={
-                'bg-[url(/images/Shapes.svg)] bg-right-top bg-no-repeat lg:col-span-2'
+                'bg-white bg-[url(/images/Shapes.svg)] bg-right-top bg-no-repeat lg:col-span-2'
               }
             >
               <div className='btn btn-circle bg-mainRedLight'>
@@ -80,7 +80,7 @@ export const Header: FC<Props> = ({ locale }) => {
                 </button>
               </div>
             </RoundedBlock>
-            <RoundedBlock>
+            <RoundedBlock className='bg-white'>
               <p className='text-4xl font-semibold text-mainRed'>20 000+</p>
               <div className='mt-7'>
                 <Heading5>{t('Talabalar')}</Heading5>
@@ -94,7 +94,7 @@ export const Header: FC<Props> = ({ locale }) => {
 
         {/* right block */}
         <div className='right flex w-full max-w-[420px] flex-col gap-6'>
-          <RoundedBlock>
+          <RoundedBlock className='bg-white'>
             <div className='flex gap-2'>
               <div className='mb-3 flex-grow'>
                 <Heading5>{t("Hoziroq biz bilan bog'laning")}</Heading5>

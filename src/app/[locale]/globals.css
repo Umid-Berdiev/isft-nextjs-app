@@ -22,6 +22,8 @@
     --main-red-light: #87003712;
     --main-green: #00575b;
     --main-green-gradient: linear-gradient(90deg, #00575b 100%, #00969d 100%);
+    --content-primary: #0d0d0d;
+    --content-secondary: #4b4a4a;
   }
   .dark {
     --primary: #d6deff;

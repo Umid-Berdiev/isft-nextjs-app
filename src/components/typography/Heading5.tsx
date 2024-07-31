@@ -3,7 +3,7 @@ export default function Heading5({
   className
 }: {
   children: React.ReactNode
-  className: string
+  className?: string
 }) {
   return (
     <h5 className={`font-serif text-xl font-semibold ${className}`}>

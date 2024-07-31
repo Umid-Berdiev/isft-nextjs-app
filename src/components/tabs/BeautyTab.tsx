@@ -11,6 +11,11 @@ import { PiCodeBold, PiLaptop } from 'react-icons/pi'
 import { FaBookOpenReader } from 'react-icons/fa6'
 import { FiInfo } from 'react-icons/fi'
 import { FiGlobe } from 'react-icons/fi'
+import BookIcon from '@/src/app/icons/BookIcon'
+import BanknoteHandIcon from '@/src/app/icons/BanknoteHandIcon'
+import CodeSlashIcon from '@/src/app/icons/CodeSlashIcon'
+import BookUserIcon from '@/src/app/icons/BookUserIcon'
+import LaptopIcon from '@/src/app/icons/LaptopIcon'
 
 export default function BeautyTab() {
   const [selectedTab, setSelectedTab] = useState(0)
@@ -39,7 +44,7 @@ export default function BeautyTab() {
             "Boshlang'ich ta'lim",
             "Maktabgacha ta'lim"
           ],
-          icon: <FiBook />
+          icon: (className: string) => <BookIcon className={className} />
         },
         {
           title: t('Moliyaviy-iqdisodiy dasturlar'),
@@ -50,7 +55,9 @@ export default function BeautyTab() {
             "Boshlang'ich ta'lim",
             "Maktabgacha ta'lim"
           ],
-          icon: <GiMoneyStack />
+          icon: (className: string) => (
+            <BanknoteHandIcon className={className} />
+          )
         },
         {
           title: t('Axborot texnologiyalari'),
@@ -61,7 +68,7 @@ export default function BeautyTab() {
             "Boshlang'ich ta'lim",
             "Maktabgacha ta'lim"
           ],
-          icon: <PiCodeBold />
+          icon: (className: string) => <CodeSlashIcon className={className} />
         },
         {
           title: t('Sirtqi'),
@@ -72,15 +79,10 @@ export default function BeautyTab() {
             "Boshlang'ich ta'lim",
             "Maktabgacha ta'lim"
           ],
-          icon: <FaBookOpenReader />
+          icon: (className: string) => <BookUserIcon className={className} />
         },
         {
-          title: (
-            <span className='flex items-center'>
-              {t('Masofaviy*')}
-              <FiInfo className='ml-2 text-gray-500' />
-            </span>
-          ),
+          title: t('Masofaviy*'),
           content: [
             'Xorijiy til va adabiyoti',
             'Pedagogika',
@@ -88,7 +90,8 @@ export default function BeautyTab() {
             "Boshlang'ich ta'lim",
             "Maktabgacha ta'lim"
           ],
-          icon: <PiLaptop />
+          icon: (className: string) => <LaptopIcon className={className} />,
+          info: t('Masofaviy ta`lim')
         }
       ]
     },
@@ -175,14 +178,16 @@ export default function BeautyTab() {
           {data[selectedTab].content?.map((item: any, index: number) => (
             <RoundedBlock
               key={index}
-              className={`${selectedBlock === item.title ? '!bg-gradient-to-r from-[#00575B] to-[#00969D] text-white' : 'bg-white'}`}
+              className={`${selectedBlock === item.title ? '!bg-gradient-to-r from-[#00575B] to-[#00969D] text-white' : 'bg-white'} cursor-pointer`}
               onClick={() => setSelectedBlock(item.title)}
             >
               <Heading5
                 className={`flex items-center gap-1 ${selectedBlock === item.title ? 'text-white' : 'text-mainGreen'}`}
               >
                 {typeof item.icon === 'function'
-                  ? item.icon(selectedBlock === item.title ? 'text-white' : '')
+                  ? item.icon(
+                      selectedBlock === item.title ? 'white' : '#00575B'
+                    )
                   : item.icon}
                 <span>{item.title}</span>
               </Heading5>

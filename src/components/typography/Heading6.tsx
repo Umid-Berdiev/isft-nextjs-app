@@ -1,3 +1,13 @@
-export default function Heading6({ children }: { children: React.ReactNode }) {
-  return <h6 className='font-serif text-lg font-semibold'>{children}</h6>
+export default function Heading6({
+  children,
+  className
+}: {
+  children: React.ReactNode
+  className?: string
+}) {
+  return (
+    <h6 className={`font-serif text-lg font-semibold ${className}`}>
+      {children}
+    </h6>
+  )
 }
