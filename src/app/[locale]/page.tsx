@@ -308,7 +308,7 @@ export default function DashboardPage() {
           <Heading3>{t('Joylashuv')}</Heading3>
           <div
             role='tablist'
-            className='tabs-boxed tabs tabs-sm space-x-2 bg-transparent'
+            className='tabs-boxed tabs tabs-sm bg-transparent'
           >
             {addresses.map((address, index) => (
               <>
@@ -316,14 +316,25 @@ export default function DashboardPage() {
                   type='radio'
                   name='my_tabs_2'
                   role='tab'
-                  className='tab !rounded-full bg-white text-sm'
+                  className='tab mr-2 h-8 !rounded-full bg-white px-4 text-sm [--tab-bg:yellow] last-of-type:mr-0'
                   aria-label={address.name}
                 />
                 <div
                   role='tabpanel'
-                  className='tab-content mt-6 rounded-box border-base-300 bg-base-100 p-6'
+                  className='tab-content mt-6 space-y-6 rounded-box border-none border-base-300 bg-base-100 bg-transparent p-0'
                 >
-                  Tab content 1
+                  {address.addresses.map((item, index) => (
+                    <div className='flex flex-col gap-4' key={item.email}>
+                      <Heading6 className='text-mainGreen'>
+                        {item.title}
+                      </Heading6>
+                      <p>{item.address}</p>
+                      <div className='flex flex-col'>
+                        <span>{item.tel}</span>
+                        <span>{item.email}</span>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </>
             ))}
