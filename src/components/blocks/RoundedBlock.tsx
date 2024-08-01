@@ -13,7 +13,7 @@ export default function RoundedBlock({
 }) {
   return (
     <div
-      className={`rounded-3xl p-6 text-black ${className} ${shadow ? styles.shadow : ''} hover:cursor-pointer`}
+      className={`text-contentPrimary rounded-3xl p-6 ${className} ${shadow ? styles.shadow : ''} hover:cursor-pointer`}
       onClick={onClick}
     >
       {children}

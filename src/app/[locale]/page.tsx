@@ -9,10 +9,10 @@ import DoubleDegreeIcon from '../icons/DoubleDegreeIcon'
 import SuitcaseIcon from '../icons/SuitcaseIcon'
 import BanknoteHandshakeIcon from '../icons/BanknoteHandshakeIcon'
 import Heading4 from '@/src/components/typography/Heading4'
-import { FiArrowUpRight, FiCornerRightUp } from 'react-icons/fi'
+import { FiArrowUpRight } from 'react-icons/fi'
 import Heading6 from '@/src/components/typography/Heading6'
 import CustomDateBlock from '@/src/components/blocks/CustomDateBlock'
-import Heading5 from '@/src/components/typography/Heading5'
+import { SlEnvolope, SlLocationPin, SlMap, SlPhone } from 'react-icons/sl'
 
 export default function DashboardPage() {
   const t = useTranslations('')
@@ -304,7 +304,7 @@ export default function DashboardPage() {
 
       {/* location block */}
       <section className='mt-20 flex items-start gap-4'>
-        <RoundedBlock className='flex-1 space-y-6 bg-background-secondary p-10'>
+        <RoundedBlock className='flex-1 bg-background-secondary !p-10'>
           <Heading3>{t('Joylashuv')}</Heading3>
           <div
             role='tablist'
@@ -313,26 +313,35 @@ export default function DashboardPage() {
             {addresses.map((address, index) => (
               <>
                 <input
+                  id={address.name}
+                  className='tab mr-2 h-8 !rounded-full bg-white px-4 text-sm last-of-type:mr-0 checked:!bg-mainGreen'
                   type='radio'
                   name='my_tabs_2'
                   role='tab'
-                  className='tab mr-2 h-8 !rounded-full bg-white px-4 text-sm [--tab-bg:yellow] last-of-type:mr-0'
                   aria-label={address.name}
+                  defaultChecked={index === 0}
                 />
                 <div
                   role='tabpanel'
-                  className='tab-content mt-6 space-y-6 rounded-box border-none border-base-300 bg-base-100 bg-transparent p-0'
+                  className='tab-content mt-6 space-y-6 bg-transparent p-0'
                 >
                   {address.addresses.map((item, index) => (
-                    <div className='flex flex-col gap-4' key={item.email}>
-                      <Heading6 className='text-mainGreen'>
+                    <div className='flex flex-col gap-3' key={item.email}>
+                      <Heading6 className='!font-extrabold text-mainGreen'>
                         {item.title}
                       </Heading6>
-                      <p>{item.address}</p>
-                      <div className='flex flex-col'>
+                      <p className='flex items-center gap-2'>
+                        <SlLocationPin size={20} />
+                        <span>{item.address}</span>
+                      </p>
+                      <p className='flex items-center gap-2'>
+                        <SlPhone size={20} />
                         <span>{item.tel}</span>
+                      </p>
+                      <p className='flex items-center gap-2'>
+                        <SlEnvolope size={20} />
                         <span>{item.email}</span>
-                      </div>
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -340,7 +349,7 @@ export default function DashboardPage() {
             ))}
           </div>
         </RoundedBlock>
-        <RoundedBlock className='flex-1 p-0'>
+        <RoundedBlock className='flex-1 !p-0'>
           <Image
             className='rounded-3xl object-cover'
             src='/images/Map.png'
