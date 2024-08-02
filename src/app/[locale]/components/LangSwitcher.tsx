@@ -4,11 +4,16 @@ import { usePathname, useSelectedLayoutSegments } from 'next/navigation'
 import React, { useState } from 'react'
 import { FiChevronDown } from 'react-icons/fi'
 
-const LangSwitcher: React.FC = () => {
-  interface Option {
-    label: string
-    code: string
-  }
+interface Option {
+  label: string
+  code: string
+}
+
+const LangSwitcher: React.FC = ({
+  mode = 'light'
+}: {
+  mode?: 'light' | 'dark'
+}) => {
   const pathname = usePathname()
   const urlSegments = useSelectedLayoutSegments()
 
@@ -28,7 +33,7 @@ const LangSwitcher: React.FC = () => {
       <div
         tabIndex={0}
         role='button'
-        className='btn-link flex items-center gap-2 text-white'
+        className={`btn-link flex items-center gap-2 ${mode === 'dark' ? 'text-white' : 'text-black'}`}
       >
         <span>{currentLocale}</span>
         <FiChevronDown />
