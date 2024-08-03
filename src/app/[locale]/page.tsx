@@ -109,7 +109,7 @@ export default function DashboardPage() {
             <Heading3>{t('ISFT sizga quyidagilarni taqdim etadi')}</Heading3>
             <ul className='flex flex-col gap-8 pb-5'>
               <li className='flex items-center gap-4'>
-                <RewardsIcon />
+                <RewardsIcon color='#870037' />
                 <p className='font-serif text-[22px] font-medium leading-7'>
                   {t("Yuqori sifatli ta'lim")}
                 </p>
@@ -123,7 +123,7 @@ export default function DashboardPage() {
                 </p>
               </li>
               <li className='flex items-center gap-4 pl-1'>
-                <SuitcaseIcon />
+                <SuitcaseIcon color='#870037' />
                 <p className='font-serif text-[22px] font-medium leading-7'>
                   {t(
                     "Tanlagan yo'nalishingizda yetuk mutaxassis bo'lib yetishing"

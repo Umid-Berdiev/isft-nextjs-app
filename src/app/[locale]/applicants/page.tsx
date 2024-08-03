@@ -1,17 +1,20 @@
 'use client'
 
-import RoundedBlock from '@/src/components/blocks/RoundedBlock'
-import Heading2 from '@/src/components/typography/Heading2'
-import Heading4 from '@/src/components/typography/Heading4'
-import Heading6 from '@/src/components/typography/Heading6'
 import { useTranslations } from 'next-intl'
+import RoundedBlock from '@/src/components/blocks/RoundedBlock'
 import Image from 'next/image'
-import { useEffect } from 'react'
-import BookIcon from '../../icons/BookIcon'
+import Heading2 from '@/src/components/typography/Heading2'
 import Heading3 from '@/src/components/typography/Heading3'
+import Heading4 from '@/src/components/typography/Heading4'
 import Heading5 from '@/src/components/typography/Heading5'
+import BookIcon from '@/src/app/icons/BookIcon'
+import BookUserIcon from '@/src/app/icons/BookUserIcon'
+import LightningIcon from '@/src/app/icons/LightningIcon'
+import RewardsIcon from '@/src/app/icons/RewardsIcon'
+import SuitcaseIcon from '@/src/app/icons/SuitcaseIcon'
+import UserHeartIcon from '@/src/app/icons/UserHeartIcon'
 
-export default function About() {
+export default function Applicants() {
   const t = useTranslations('')
   const data = [
     {
@@ -30,24 +33,24 @@ export default function About() {
     {
       title: "O'ziga xos o'qitish uslubi",
       description:
-        "ISFT instituti jahon amaliy tajribasini ta'lim sohasiga singdirgan holda xalqaro darajadagi mutaxassislarni tayyorlashga intiladi. Bizning talabalarimiz yetakchi mutahassislar rahbarligida o‘qish imkoniyatlariga egadirlar. Shuningdek, tadqiqotlar hamjamiyatida bo‘la turib , ular o‘quv dasturlarining dastlabki kunlaridanoq samarali tadqiqot usullarini o‘rgana boshlaydilar. Talabalar keng ta'lim olishlarida va ishga joylashishida tengi yo‘q bo‘lgan turli masalalarni yechish ko‘nikmalarini va malakalarini yaxshilash qobiliyatlarini rivojlantiradilar.",
+        "ISFT instituti jahon amaliy tajribasini ta'lim sohasiga singdirgan holda xalqaro darajadagi mutaxassislarni tayyorlashga intiladi. Bizning talabalarimiz yetakchi mutahassislar rahbarligida o'qish imkoniyatlariga egadirlar. Shuningdek, tadqiqotlar hamjamiyatida bo'la turib , ular o'quv dasturlarining dastlabki kunlaridanoq samarali tadqiqot usullarini o'rgana boshlaydilar. Talabalar keng ta'lim olishlarida va ishga joylashishida tengi yo'q bo'lgan turli masalalarni yechish ko'nikmalarini va malakalarini yaxshilash qobiliyatlarini rivojlantiradilar.",
       image: '/images/Image13.png'
     },
     {
       title: 'Kichik guruhlar samaradorligi',
       description:
-        "ISFT instituti barcha talabalariga kichik guruhlarda, maxsus ishchi jamoalarida, tajribali o‘qituvchilar va akademiklar qo‘l ostida ta'lim olish imkoniyatini taqdim qilish samaradorligi g‘oyasi tarafdoridir. Bu uslub talabalarning ijodkorligi va tashabbuskorligini rivojlantiradi va faol-tadqiqotlar olib boriladigan o‘quv muhitida bilim olishning foydaliligini oshiradi.",
+        "ISFT instituti barcha talabalariga kichik guruhlarda, maxsus ishchi jamoalarida, tajribali o'qituvchilar va akademiklar qo'l ostida ta'lim olish imkoniyatini taqdim qilish samaradorligi g'oyasi tarafdoridir. Bu uslub talabalarning ijodkorligi va tashabbuskorligini rivojlantiradi va faol-tadqiqotlar olib boriladigan o'quv muhitida bilim olishning foydaliligini oshiradi.",
       image: '/images/Image14.png'
     }
   ]
 
   return (
-    <div className='container'>
+    <div className='container pb-16'>
       <RoundedBlock className='h-[528px] bg-[url(/images/Head.svg)] bg-cover bg-no-repeat !p-12 !text-white'>
         <Heading2 className=''>{t('Biz haqimizda')}</Heading2>
         <p className='w-1/2'>
           {t(
-            "ISFT instituti moslashuvchan g‘arb ta'lim tizimini uyg‘unlashtirgan holda zamonaviy ta'lim amaliyotidan foydalanadi. Bizning asosiy o‘ziga hos tomonlarimiz shundan iboratki, samarali o'qitishning xalqaro e'tirof etilgan tamoyillari to‘g‘ridan to‘g‘ri emas, balki O‘zbekistondagi ta'lim darajasi va xalq dunyoqarashiga moslashtirilgan holda tadbiq etiladi."
+            "ISFT instituti moslashuvchan g'arb ta'lim tizimini uyg'unlashtirgan holda zamonaviy ta'lim amaliyotidan foydalanadi. Bizning asosiy o'ziga hos tomonlarimiz shundan iboratki, samarali o'qitishning xalqaro e'tirof etilgan tamoyillari to'g'ridan to'g'ri emas, balki O'zbekistondagi ta'lim darajasi va xalq dunyoqarashiga moslashtirilgan holda tadbiq etiladi."
           )}
         </p>
       </RoundedBlock>
@@ -73,20 +76,111 @@ export default function About() {
           </div>
         ))}
       </div>
-      <div className=''>
+      <div className='mt-20'>
         <Heading2 className='text-center'>
-          {t('Bizning bitiruvchilarimizdagi afzalliklar va o’ziga xosliklar')}
+          {t("Bizning bitiruvchilarimizdagi afzalliklar va o'ziga xosliklar")}
         </Heading2>
         <RoundedBlock className='mt-8 grid gap-4 bg-background-secondary !p-6 md:grid-cols-2'>
           <RoundedBlock className='flex flex-col justify-between bg-white !p-6 text-mainGreen md:h-[184px]'>
-            <button className='btn btn-circle btn-md bg-background-secondary'>
+            <button className='bg-mainGreenLight btn btn-circle btn-md border-transparent'>
               <BookIcon />
             </button>
             <Heading5 className='!text-[22px]'>
               {t("O'z sohasida mukammal kompleks bilimlarga egaligi")}
             </Heading5>
           </RoundedBlock>
+          <RoundedBlock className='flex flex-col justify-between bg-white !p-6 text-mainGreen md:h-[184px]'>
+            <button className='bg-mainGreenLight btn btn-circle btn-md border-transparent'>
+              <LightningIcon />
+            </button>
+            <Heading5 className='!text-[22px]'>
+              {t(
+                "Tanqidiy fikrlash va qo'yilgan masalalarni yechish ko'nikmasiga egaligi"
+              )}
+            </Heading5>
+          </RoundedBlock>
+          <RoundedBlock className='flex flex-col justify-between bg-white !p-6 text-mainGreen md:h-[184px]'>
+            <button className='bg-mainGreenLight btn btn-circle btn-md border-transparent'>
+              <SuitcaseIcon />
+            </button>
+            <Heading5 className='!text-[22px]'>
+              {t('Biznes savodxonligi va kirishuvchanligi')}
+            </Heading5>
+          </RoundedBlock>
+          <RoundedBlock className='flex flex-col justify-between bg-white !p-6 text-mainGreen md:h-[184px]'>
+            <button className='bg-mainGreenLight btn btn-circle btn-md border-transparent'>
+              <RewardsIcon />
+            </button>
+            <Heading5 className='!text-[22px]'>
+              {t(
+                "Yetakchilik sifatlari, jamoat bo'lib ishlash va rivojlanish ko'nikmalari"
+              )}
+            </Heading5>
+          </RoundedBlock>
+          <RoundedBlock className='flex flex-col justify-between bg-white !p-6 text-mainGreen md:h-[184px]'>
+            <button className='bg-mainGreenLight btn btn-circle btn-md border-transparent'>
+              <BookUserIcon />
+            </button>
+            <Heading5 className='!text-[22px]'>
+              {t("Ahloqiy kompetensiyaga egaligi va xalqaro bag'rikengligi")}
+            </Heading5>
+          </RoundedBlock>
+          <RoundedBlock className='flex flex-col justify-between bg-white !p-6 text-mainGreen md:h-[184px]'>
+            <button className='bg-mainGreenLight btn btn-circle btn-md border-transparent'>
+              <UserHeartIcon />
+            </button>
+            <Heading5 className='!text-[22px]'>
+              {t(
+                "O'z ishiga sadoqat, hissiyotni jilovlay olish sabr bardoshli bo'lish."
+              )}
+            </Heading5>
+          </RoundedBlock>
         </RoundedBlock>
+      </div>
+      <RoundedBlock className='mt-20 flex items-center gap-10 bg-mainGreen !p-12 text-white'>
+        <div className='space-y-4'>
+          <Heading3 className=''>{t("Rektor bilan bog'laning")}</Heading3>
+          <p>
+            {t(
+              "Rektor uchun taklif yoki shikoyatlaringiz bo'lsa tugmani bosish orqali rektor bilan bog'lanishingiz va o'z taklif, shikoyat, e'tirozlaringizni bildirishingiz mumkin"
+            )}
+          </p>
+        </div>
+        <div
+          className='divider divider-vertical h-auto w-px bg-gray-300'
+          // style={{
+          //   background:
+          //     'linear-gradient(90deg, rgba(255, 255, 255, 0.00) 10.5%, #FFF 50%, rgba(255, 255, 255, 0.00) 90%)'
+          // }}
+        ></div>
+        <div>
+          <button className='btn whitespace-nowrap rounded-full bg-white px-5'>
+            {t('Elektron qabulxona')}
+          </button>
+        </div>
+      </RoundedBlock>
+      <div className='mt-20 text-center'>
+        <Heading2>{t('Litsenziya va sertifikatlar')}</Heading2>
+        <div className='flex-start mt-8 flex justify-center gap-4'>
+          <RoundedBlock className='w-full max-w-80 bg-background-secondary !p-6'>
+            <Image
+              src='/images/Image15.png'
+              alt='1'
+              width={260}
+              height={367}
+              layout='responsive'
+            />
+          </RoundedBlock>
+          <RoundedBlock className='w-full max-w-80 bg-background-secondary !p-6'>
+            <Image
+              src='/images/Image16.png'
+              alt='1'
+              width={260}
+              height={367}
+              layout='responsive'
+            />
+          </RoundedBlock>
+        </div>
       </div>
     </div>
   )

@@ -39,9 +39,10 @@ const config = {
         mainRed: 'var(--main-red)',
         mainRedLight: 'var(--main-red-light)',
         mainGreen: 'var(--main-green)',
+        mainGreenLight: 'var(--main-green-light)',
         mainGreenGradient: 'var(--main-green-gradient)',
         contentPrimary: 'var(--content-primary)',
-        contentSecondary: 'var(--content-secondary)',
+        contentSecondary: 'var(--content-secondary)'
       },
 
       fontFamily: {
