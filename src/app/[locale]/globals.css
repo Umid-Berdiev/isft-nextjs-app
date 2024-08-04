@@ -25,6 +25,7 @@
     --main-green-gradient: linear-gradient(90deg, #00575b 100%, #00969d 100%);
     --content-primary: #0d0d0d;
     --content-secondary: #4b4a4a;
+    --content-tertiary: #838383;
   }
   .dark {
     --primary: #d6deff;

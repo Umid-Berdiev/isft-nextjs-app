@@ -42,7 +42,8 @@ const config = {
         mainGreenLight: 'var(--main-green-light)',
         mainGreenGradient: 'var(--main-green-gradient)',
         contentPrimary: 'var(--content-primary)',
-        contentSecondary: 'var(--content-secondary)'
+        contentSecondary: 'var(--content-secondary)',
+        contentTertiary: 'var(--content-tertiary)'
       },
 
       fontFamily: {

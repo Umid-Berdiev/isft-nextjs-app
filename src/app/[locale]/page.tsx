@@ -9,10 +9,11 @@ import DoubleDegreeIcon from '../icons/DoubleDegreeIcon'
 import SuitcaseIcon from '../icons/SuitcaseIcon'
 import BanknoteHandshakeIcon from '../icons/BanknoteHandshakeIcon'
 import Heading4 from '@/src/components/typography/Heading4'
-import { FiArrowUpRight } from 'react-icons/fi'
+import { FiArrowUpRight, FiVolumeX } from 'react-icons/fi'
 import Heading6 from '@/src/components/typography/Heading6'
 import CustomDateBlock from '@/src/components/blocks/CustomDateBlock'
 import { SlEnvolope, SlLocationPin, SlMap, SlPhone } from 'react-icons/sl'
+import FullScreenIcon from '../icons/FullScreen'
 
 export default function DashboardPage() {
   const t = useTranslations('')
@@ -95,17 +96,26 @@ export default function DashboardPage() {
       <BeautyTab />
       <section className='mt-20 text-center'>
         <Heading2>{t('Imkoniyatlar va Afzalliklar')}</Heading2>
-        <div className='mt-8 flex w-full gap-4'>
-          <RoundedBlock className='flex-shrink-0 flex-grow !p-0'>
+        <div className='mt-8 flex flex-wrap gap-4'>
+          <RoundedBlock className='relative flex-1 flex-shrink-0 !p-0'>
             <Image
               className='rounded-3xl object-cover'
               src='/images/image27.png'
               width={632}
               height={632}
               alt='1'
+              layout='responsive'
             />
+            <div className='absolute bottom-6 right-6 flex gap-4'>
+              <button className='btn btn-circle'>
+                <FiVolumeX className='text-2xl' />
+              </button>
+              <button className='btn btn-circle'>
+                <FullScreenIcon />
+              </button>
+            </div>
           </RoundedBlock>
-          <RoundedBlock className='flex flex-col gap-8 bg-background-secondary !p-14 text-left'>
+          <RoundedBlock className='w-full max-w-[632px] space-y-8 bg-background-secondary !p-14 text-left'>
             <Heading3>{t('ISFT sizga quyidagilarni taqdim etadi')}</Heading3>
             <ul className='flex flex-col gap-8 pb-5'>
               <li className='flex items-center gap-4'>
@@ -180,6 +190,7 @@ export default function DashboardPage() {
                 width={788}
                 height={360}
                 alt='1'
+                layout='responsive'
               />
               <div className='flex items-center gap-2 self-stretch pb-0.5 pt-2'>
                 <button className='rounded-full bg-gradient-to-r from-[#870037] to-[#C30050] px-2 py-1 text-xs font-extrabold text-white'>
@@ -202,10 +213,10 @@ export default function DashboardPage() {
               <div className='flex items-end justify-between self-stretch'>
                 <CustomDateBlock date='2024-07-26' />
                 <div className='ml-auto inline-flex gap-4'>
-                  <button className='btn rounded-full border-mainRed font-medium text-mainRed'>
+                  <button className='btn btn-sm h-10 rounded-full border-mainRed font-medium text-mainRed'>
                     {t('Ishtirok etish')}
                   </button>
-                  <button className='btn rounded-full border-mainGreen font-medium text-mainGreen'>
+                  <button className='btn btn-sm h-10 rounded-full border-mainGreen font-medium text-mainGreen'>
                     <span>{t('Batafsil')}</span>
                     <FiArrowUpRight size={20} />
                   </button>

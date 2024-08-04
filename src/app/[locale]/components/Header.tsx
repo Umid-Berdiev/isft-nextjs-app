@@ -13,6 +13,7 @@ import Heading1 from '@/src/components/typography/Heading1'
 import Heading5 from '@/src/components/typography/Heading5'
 import FullScreenIcon from '../../icons/FullScreen'
 import { usePathname } from 'next/navigation'
+import AppNavbar from '@/src/components/globals/AppNavbar'
 
 interface Props {
   locale: string
@@ -30,15 +31,7 @@ export const Header: FC<Props> = ({ locale }) => {
           className={`bg-[url(/images/Hero.svg)] bg-cover bg-no-repeat pb-20`}
         >
           <div className='container flex flex-row items-center justify-between py-5 text-white'>
-            <AppLogo />
-            <div className='flex flex-row items-center gap-6'>
-              <AppMainMenu locale={locale} mode='dark' />
-              |
-              <LangSwitcher mode='dark' />
-              <button className='btn ml-20 rounded-3xl bg-white text-base font-medium'>
-                {t('Onlayn qabul')}
-              </button>
-            </div>
+            <AppNavbar locale={locale} mode='dark' />
           </div>
 
           <section className='hero-section container mt-6 flex gap-6 text-white'>
@@ -150,16 +143,8 @@ export const Header: FC<Props> = ({ locale }) => {
         </header>
       ) : (
         <header className={`bg-cover bg-no-repeat pb-6`}>
-          <div className='text-contentPrimary container flex flex-row items-center justify-between py-5'>
-            <AppLogo className='text-mainRed' />
-            <div className='flex flex-row items-center gap-6'>
-              <AppMainMenu locale={locale} />
-              |
-              <LangSwitcher className='text-contentPrimary' />
-              <button className='hover:text-contentPrimary btn ml-20 rounded-3xl bg-mainRed text-base font-medium text-white hover:bg-mainRedLight'>
-                {t('Onlayn qabul')}
-              </button>
-            </div>
+          <div className='container flex flex-row items-center justify-between py-5 text-contentPrimary'>
+            <AppNavbar locale={locale} />
           </div>
         </header>
       )}

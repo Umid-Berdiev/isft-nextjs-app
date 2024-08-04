@@ -9,11 +9,11 @@ interface Option {
   code: string
 }
 
-const LangSwitcher: React.FC = ({
+export default function LangSwitcher({
   mode = 'light'
 }: {
   mode?: 'light' | 'dark'
-}) => {
+}) {
   const pathname = usePathname()
   const urlSegments = useSelectedLayoutSegments()
 
@@ -58,5 +58,3 @@ const LangSwitcher: React.FC = ({
     </div>
   )
 }
-
-export default LangSwitcher
