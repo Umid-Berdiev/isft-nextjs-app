@@ -1,21 +1,9 @@
 'use client'
-import { createLocalizedPathnamesNavigation } from 'next-intl/navigation'
+import { locales } from '@/i18n/request'
+import { createNavigation } from 'next-intl/navigation'
 import { Pathnames } from 'next-intl/routing'
-import { locales } from './i18n'
 
 export const localePrefix = 'always'
-
-// export const pathnames = {
-//   '/': '/',
-//   '/about': '/about',
-//   '/activity': '/activity',
-//   '/applicants': '/applicants',
-//   '/contacts': '/contacts',
-//   '/faq': '/faq',
-//   '/news': '/news',
-//   '/news/:slug': '/news/:slug',
-//   '/students': '/students',
-// } satisfies Pathnames<typeof locales>
 
 export type LocationItem = {
   name: string
@@ -25,12 +13,6 @@ export type LocationItem = {
 }
 
 export const locations: LocationItem[] = [
-  // {
-  //   name: 'home',
-  //   path: '/',
-  //   label: 'Home',
-  //   children: []
-  // },
   {
     name: 'about',
     path: '/about',
@@ -88,7 +70,7 @@ export const pathnames = locations.reduce((acc, location) => {
     acc[child.path] = child.path
   })
   return acc
-}) as Pathnames<typeof locales>
+}) as Pathnames<LocationItem>
 
 export const { Link, redirect, usePathname, useRouter, getPathname } =
-  createLocalizedPathnamesNavigation({ locales, localePrefix, pathnames })
+  createNavigation({ locales, localePrefix, pathnames })

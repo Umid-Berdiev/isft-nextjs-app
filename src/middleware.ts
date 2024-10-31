@@ -1,6 +1,6 @@
+import { locales } from '@/i18n/request'
 import createMiddleware from 'next-intl/middleware'
 import { NextRequest } from 'next/server'
-import { locales } from './i18n'
 import { localePrefix } from './navigation'
 
 type CustomMiddleware = (req: NextRequest) => Promise<NextRequest>
@@ -23,5 +23,5 @@ export default async function middleware(
 }
 
 export const config = {
-  matcher: ['/', '/(en|ru|uz|uzc)/:path*']
+  matcher: ['/', '/(en|ru|uz)/:path*']
 }

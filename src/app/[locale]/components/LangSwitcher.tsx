@@ -1,7 +1,6 @@
 'use client'
 
 import { usePathname, useSelectedLayoutSegments } from 'next/navigation'
-import React, { useState } from 'react'
 import { FiChevronDown } from 'react-icons/fi'
 
 interface Option {
@@ -20,8 +19,7 @@ export default function LangSwitcher({
   const options: Option[] = [
     { label: 'Eng', code: 'en' }, // Native name is the same
     { label: 'Рус', code: 'ru' },
-    { label: "O'zb", code: 'uz' },
-    { label: 'Ўзб', code: 'uzс' }
+    { label: "O'zb", code: 'uz' }
   ]
 
   const currentLocale = options.find(
