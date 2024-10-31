@@ -1,7 +1,8 @@
+import LangSwitcher from '@/src/app/[locale]/components/LangSwitcher'
+import ThemeSwitch from '@/src/app/[locale]/components/ThemeSwitch'
 import { useTranslations } from 'next-intl'
 import { usePathname } from 'next/navigation'
 import AppLogo from './AppLogo'
-import LangSwitcher from '@/src/app/[locale]/components/LangSwitcher'
 import AppMainMenu from './AppMainMenu'
 import AppMobileMenu from './AppMobileMenu'
 
@@ -46,6 +47,7 @@ export default function AppNavbar({
           className={`mx-6 h-3 w-px ${mode === 'dark' ? 'bg-white' : 'bg-black'}`}
         ></div>
         <LangSwitcher mode={mode} />
+        <ThemeSwitch />
       </div>
       <div className='navbar-end'>
         <button
