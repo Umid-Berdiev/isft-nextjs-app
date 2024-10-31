@@ -3,7 +3,7 @@ import { capitalize } from '@/lib/utils'
 import { useTranslations } from 'next-intl'
 import { useTheme } from 'next-themes'
 import { useEffect, useRef, useState } from 'react'
-import { FiSun } from 'react-icons/fi'
+import { FiMoon, FiSun } from 'react-icons/fi'
 import { useOnClickOutside } from 'usehooks-ts'
 
 export default function ThemeSwitch() {
@@ -14,6 +14,7 @@ export default function ThemeSwitch() {
   const ref = useRef(null)
   useEffect(() => setMounted(true), [])
   useOnClickOutside(ref, () => setIsOpen(false))
+
   if (!mounted)
     return (
       <button
@@ -35,12 +36,12 @@ export default function ThemeSwitch() {
     <div ref={ref} className='relative inline-block text-left'>
       <button
         type='button'
-        className='text-destructive inline-flex w-full min-w-[95px] items-center justify-center gap-3'
+        className={`text-destructive inline-flex w-full min-w-[95px] items-center justify-center gap-3 ${theme === 'dark' ? 'text-white' : 'text-black'}`}
         id='options-menu'
         aria-expanded={isOpen}
         onClick={toggleDropdown}
       >
-        <FiSun />
+        {theme === 'dark' ? <FiMoon /> : <FiSun />}
       </button>
       {isOpen && (
         <div className='absolute right-0 mt-2 w-full origin-top-right rounded-md bg-dropdown shadow-lg'>

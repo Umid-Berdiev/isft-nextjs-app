@@ -1,7 +1,6 @@
 import LangSwitcher from '@/src/app/[locale]/components/LangSwitcher'
 import ThemeSwitch from '@/src/app/[locale]/components/ThemeSwitch'
 import { useTranslations } from 'next-intl'
-import { usePathname } from 'next/navigation'
 import AppLogo from './AppLogo'
 import AppMainMenu from './AppMainMenu'
 import AppMobileMenu from './AppMobileMenu'
@@ -14,8 +13,6 @@ export default function AppNavbar({
   mode?: 'light' | 'dark'
 }) {
   const t = useTranslations('')
-  const pathname = usePathname()
-  console.log({ mode })
 
   return (
     <div className='navbar p-0'>

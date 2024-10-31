@@ -1,4 +1,5 @@
 'use client'
+
 import AppNavbar from '@/src/components/globals/AppNavbar'
 import { useTranslations } from 'next-intl'
 import { usePathname } from 'next/navigation'

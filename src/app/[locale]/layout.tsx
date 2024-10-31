@@ -5,12 +5,12 @@ import {
   NextIntlClientProvider,
   useMessages
 } from 'next-intl'
-import { Roboto_Flex, Manrope } from 'next/font/google'
+import { Manrope } from 'next/font/google'
+import localFont from 'next/font/local'
 import NextTopLoader from 'nextjs-toploader'
 import { Header } from './components/Header'
-import './globals.css'
-import localFont from 'next/font/local'
 import TheFooter from './components/TheFooter'
+import './globals.css'
 
 // const roboto = Roboto_Flex({
 //   subsets: ['latin', 'cyrillic'],
@@ -51,8 +51,8 @@ const manrope = Manrope({
 })
 
 export const metadata: Metadata = {
-  title: 'ISFT',
-  description: 'ISFT - Институт Современных Финансовых Технологий'
+  title: '',
+  description: ''
 }
 
 export default function RootLayout({
