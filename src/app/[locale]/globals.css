@@ -4,11 +4,11 @@
 
 @layer base {
   :root {
-    --primary: #0d0d0d;
-    --secondary: #097fa5;
-    --background: #ffffff;
+    --primary: #232427;
+    --secondary: #29ced2;
+    --background: #f9f9f9;
     --background-secondary: #f4f5f7;
-    --button: #097fa5;
+    --button: #29ced2;
     --button-text: #fff;
     --text-secondary: #3c3c3c;
     --dropdown: #e0f4ff;
@@ -17,7 +17,7 @@
     --selected: #9ec6ff;
     --logo-shadow: #053949;
     --logo-body: #00d8fe;
-    --span-bg: linear-gradient(to right, #4e4e9e, #097fa5, #3e87ed);
+    --span-bg: linear-gradient(to right, #4e4e9e, #29ced2, #3e87ed);
     --main-red: #870037;
     --main-red-light: #87003712;
     --main-green: #00575b;
@@ -27,31 +27,9 @@
     --content-secondary: #4b4a4a;
     --content-tertiary: #838383;
   }
-  .dark {
-    --primary: #d6deff;
-    --secondary: #0ba6d1;
-    --background: #121212;
-    --background-secondary: #1b1b1b;
-    --button: #097fa5;
-    --button-text: #fff;
-    --text-secondary: #bbbbbb;
-    --dropdown: #2d2d2d;
-    --dropdown-hover: #454545;
-    --button-secondary: #1d1d1d;
-    --selected: #324e70;
-    --logo-shadow: #0a2e36;
-    --logo-body: #097fa5;
-    --span-bg: linear-gradient(to right, #8c00ff, #0fb4e1, #a1d930, #ae0000);
-  }
 }
 
 @layer base {
-  /* *:lang(ar) {
-    font-family: var(--rubik) !important;
-  }
-  *:lang(fa) {
-    font-family: var(--rubik) !important;
-  } */
   div::selection,
   h1::selection,
   button::selection,
@@ -69,4 +47,9 @@
   body {
     @apply bg-background text-primary;
   }
+}
+
+.sub-menu {
+  overflow: hidden;
+  transition: height 300ms;
 }

@@ -5,11 +5,10 @@ import {
   NextIntlClientProvider,
   useMessages
 } from 'next-intl'
-import { Manrope } from 'next/font/google'
-import localFont from 'next/font/local'
+import { Inter } from 'next/font/google'
 import NextTopLoader from 'nextjs-toploader'
 import { Header } from './components/Header'
-import TheFooter from './components/TheFooter'
+import TheSidebar from './components/Sidebar'
 import './globals.css'
 
 // const roboto = Roboto_Flex({
@@ -18,37 +17,43 @@ import './globals.css'
 //   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
 // })
 
-const magnetTrial = localFont({
-  src: [
-    {
-      path: '../fonts/MagnetTrial/MagnetTrial-Regular.ttf',
-      weight: '400',
-      style: 'normal'
-    },
-    {
-      path: '../fonts/MagnetTrial/MagnetTrial-Medium.ttf',
-      weight: '500',
-      style: 'normal'
-    },
-    {
-      path: '../fonts/MagnetTrial/MagnetTrial-SemiBold.ttf',
-      weight: '600',
-      style: 'normal'
-    },
-    {
-      path: '../fonts/MagnetTrial/MagnetTrial-Bold.ttf',
-      weight: '700',
-      style: 'normal'
-    }
-  ],
-  variable: '--magnet-trial'
+const inter = Inter({
+  subsets: ['latin', 'cyrillic'],
+  variable: '--inter',
+  weight: ['400', '500', '600', '700']
 })
 
-const manrope = Manrope({
-  subsets: ['latin', 'cyrillic'],
-  variable: '--manrope',
-  weight: ['200', '300', '400', '500', '600', '700', '800']
-})
+// const magnetTrial = localFont({
+//   src: [
+//     {
+//       path: '../fonts/MagnetTrial/MagnetTrial-Regular.ttf',
+//       weight: '400',
+//       style: 'normal'
+//     },
+//     {
+//       path: '../fonts/MagnetTrial/MagnetTrial-Medium.ttf',
+//       weight: '500',
+//       style: 'normal'
+//     },
+//     {
+//       path: '../fonts/MagnetTrial/MagnetTrial-SemiBold.ttf',
+//       weight: '600',
+//       style: 'normal'
+//     },
+//     {
+//       path: '../fonts/MagnetTrial/MagnetTrial-Bold.ttf',
+//       weight: '700',
+//       style: 'normal'
+//     }
+//   ],
+//   variable: '--magnet-trial'
+// })
+
+// const manrope = Manrope({
+//   subsets: ['latin', 'cyrillic'],
+//   variable: '--manrope',
+//   weight: ['200', '300', '400', '500', '600', '700', '800']
+// })
 
 export const metadata: Metadata = {
   title: '',
@@ -65,7 +70,7 @@ export default function RootLayout({
   const messages = useMessages()
   return (
     <html
-      className={`${manrope.variable} ${magnetTrial.variable} scroll-smooth`}
+      className={`${inter.variable} scroll-smooth`}
       lang={locale}
       dir={'ltr'}
       suppressHydrationWarning
@@ -101,9 +106,16 @@ export default function RootLayout({
               color='var(--primary)'
               showSpinner={false}
             />
-            <Header locale={locale} />
-            <main className='mx-auto max-w-screen-2xl'>{children}</main>
-            <TheFooter />
+            <main className='mx-auto'>
+              <div className='flex'>
+                <TheSidebar />
+                <div className='flex-grow'>
+                  <Header locale={locale} />
+                  {children}
+                </div>
+              </div>
+            </main>
+            {/* <TheFooter /> */}
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>

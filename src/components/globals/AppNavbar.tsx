@@ -1,57 +1,45 @@
-import LangSwitcher from '@/src/app/[locale]/components/LangSwitcher'
-import ThemeSwitch from '@/src/app/[locale]/components/ThemeSwitch'
+import Button from '@/src/app/[locale]/components/Button'
 import { useTranslations } from 'next-intl'
-import AppLogo from './AppLogo'
-import AppMainMenu from './AppMainMenu'
-import AppMobileMenu from './AppMobileMenu'
+import AppInput from '../forms/AppInput'
 
-export default function AppNavbar({
-  locale,
-  mode = 'light'
-}: {
-  locale: string
-  mode?: 'light' | 'dark'
-}) {
+export default function AppNavbar({ locale }: { locale: string }) {
   const t = useTranslations('')
 
   return (
-    <div className='navbar p-0'>
-      <div className='navbar-start'>
-        <div className='dropdown'>
-          <div tabIndex={0} role='button' className='btn btn-ghost lg:hidden'>
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              className='h-5 w-5'
-              fill='none'
-              viewBox='0 0 24 24'
-              stroke='currentColor'
-            >
-              <path
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                strokeWidth='2'
-                d='M4 6h16M4 12h8m-8 6h16'
-              />
-            </svg>
+    <div className='navbar p-4'>
+      <div className='flex-grow gap-2'>
+        {/*  */}
+        <Button>{t('Bemor qo’shish')}</Button>
+        <AppInput placeholder={t('Bemor IDsi')} />
+        <AppInput placeholder={t('№ karta')} />
+      </div>
+      <div className='ml-auto flex'>
+        {/* user dropdown */}
+        <div className='dropdown dropdown-end'>
+          <div
+            tabIndex={0}
+            role='button'
+            className='btn-ghost text-right hover:bg-transparent'
+          >
+            <p className='text-sm font-semibold'>John Doe</p>
+            <p className='text-xs opacity-50'>Administrator</p>
           </div>
-          <AppMobileMenu locale={locale} mode={mode} />
+          <ul
+            tabIndex={0}
+            className='menu dropdown-content z-[1] rounded-box p-2 shadow'
+          >
+            <li>
+              <a href={`/${locale}/profile`} className='text-black'>
+                {t('Profil')}
+              </a>
+            </li>
+            <li>
+              <a href={`/${locale}/logout`} className='text-black'>
+                {t('Chiqish')}
+              </a>
+            </li>
+          </ul>
         </div>
-        <AppLogo className={mode === 'dark' ? 'text-white' : 'text-mainRed'} />
-      </div>
-      <div className='navbar-center hidden lg:flex'>
-        <AppMainMenu locale={locale} mode={mode} />
-        <div
-          className={`mx-6 h-3 w-px ${mode === 'dark' ? 'bg-white' : 'bg-black'}`}
-        ></div>
-        <LangSwitcher mode={mode} />
-        <ThemeSwitch />
-      </div>
-      <div className='navbar-end'>
-        <button
-          className={`btn rounded-3xl text-base font-medium ${mode === 'dark' ? 'bg-white' : 'bg-mainRed text-white'}`}
-        >
-          {t('Onlayn qabul')}
-        </button>
       </div>
     </div>
   )

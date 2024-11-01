@@ -8,11 +8,7 @@ interface Option {
   code: string
 }
 
-export default function LangSwitcher({
-  mode = 'light'
-}: {
-  mode?: 'light' | 'dark'
-}) {
+export default function LangSwitcher() {
   const pathname = usePathname()
   const urlSegments = useSelectedLayoutSegments()
 
@@ -31,14 +27,14 @@ export default function LangSwitcher({
       <div
         tabIndex={0}
         role='button'
-        className={`btn-link flex items-center gap-2 ${mode === 'dark' ? 'text-white' : 'text-black'}`}
+        className={`btn-link flex items-center gap-2`}
       >
         <span>{currentLocale}</span>
         <FiChevronDown />
       </div>
       <ul
         tabIndex={0}
-        className='menu dropdown-content z-[1] rounded-box bg-base-100 p-2 shadow'
+        className='menu dropdown-content z-[1] rounded-box p-2 shadow'
       >
         {options.map(lang => {
           return (

@@ -14,7 +14,7 @@ const config = {
       center: true,
       // padding: '2rem',
       screens: {
-        '2xl': '1280px'
+        // '2xl': '1280px'
       }
     },
     extend: {
@@ -47,8 +47,8 @@ const config = {
       },
 
       fontFamily: {
-        sans: ['var(--manrope)'],
-        serif: ['var(--magnet-trial)']
+        sans: ['var(--inter)']
+        // serif: ['var(--magnet-trial)']
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -58,7 +58,7 @@ const config = {
   },
   plugins: [require('tailwindcss-animate'), require('daisyui')],
   daisyui: {
-    themes: ['light', 'dark']
+    themes: ['light']
   }
 } satisfies Config
 

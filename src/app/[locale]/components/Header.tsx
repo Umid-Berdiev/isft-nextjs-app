@@ -16,7 +16,7 @@ export const Header: FC<Props> = ({ locale }) => {
 
   return (
     <header className={`bg-cover bg-no-repeat pb-6`}>
-      <div className='container flex flex-row items-center justify-between py-5 text-contentPrimary'>
+      <div className='container flex flex-row items-center justify-between text-contentPrimary'>
         <AppNavbar locale={locale} />
       </div>
     </header>
